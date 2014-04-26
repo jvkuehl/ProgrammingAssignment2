@@ -1,5 +1,6 @@
 ## makeCacheMatrix is a function that creates a matrix object that can cache 
-## its inverse.  
+## its inverse.  the output of the function is list of 4 function that serves 
+## as the input of the function cachesolve below 
 
 makeCacheMatrix <- function(x = matrix()) {
         mi <- NULL
@@ -8,7 +9,7 @@ makeCacheMatrix <- function(x = matrix()) {
                 mi <<- NULL
         }
         get <- function() x
-        setinverse <- function(solve) mi <<- setinverse
+        setinverse <- function(solve) mi <<- solve
         getinverse <- function() mi
         list(set = set, get = get,
              setinverse = setinverse,
